@@ -262,6 +262,29 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 2px;
   }
+  /* Mosaic photo gallery — images shown complete, no cropping */
+  .foto-mosaic {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  .foto-mosaic-item {
+    background: var(--surface);
+    overflow: hidden;
+    border-radius: 2px;
+    transition: transform .3s ease, box-shadow .3s ease;
+  }
+  .foto-mosaic-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,.5);
+  }
+  .foto-mosaic-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    transition: opacity .3s;
+  }
   .videoclips-grid {
     grid-template-columns: repeat(2, 1fr);
     max-width: 960px;
@@ -287,6 +310,16 @@
     text-transform: uppercase; opacity: 0; transition: opacity .3s;
   }
   .gallery-card:hover .gallery-caption { opacity: 1; }
+
+  /* ── PRESS PHOTO ──────────────────────────────────────── */
+  .press-card-img {
+    width: 100%; aspect-ratio: 16/9;
+    object-fit: cover; object-position: top;
+    display: block; margin-bottom: 20px;
+    border-radius: 2px;
+    transition: opacity .3s;
+  }
+  .press-card:hover .press-card-img { opacity: .85; }
 
   /* ── REPERTOIRE ──────────────────────────────────────── */
   #repertorio { background: var(--surface); border-top: 1px solid var(--border); }
@@ -358,11 +391,13 @@
   .press-header { margin-bottom: 48px; }
   .press-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
   .press-card {
-    background: var(--bg); padding: 36px 32px;
+    background: var(--bg); padding: 0;
     border: 1px solid var(--border);
     transition: border-color .2s;
+    overflow: hidden;
   }
   .press-card:hover { border-color: var(--gold-dim); }
+  .press-card-body { padding: 28px 28px 24px; }
   .press-source { font-size: .65rem; letter-spacing: .2em; color: var(--gold); text-transform: uppercase; margin-bottom: 14px; }
   .press-card h4 {
     font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 400;
@@ -403,6 +438,7 @@
     .hero { padding: 0 24px 80px; }
     .about-grid, .tv-grid, .rep-grid { grid-template-columns: 1fr; }
     .gallery-grid, .videoclips-grid { grid-template-columns: 1fr 1fr; }
+    .foto-mosaic { grid-template-columns: 1fr 1fr; }
     .tv-sub-grid { grid-template-columns: 1fr; }
     .press-grid { grid-template-columns: 1fr; }
     .form-row { grid-template-columns: 1fr; }
@@ -520,8 +556,9 @@
     <li><a href="#biografia">Biografía</a></li>
     <li><a href="#palmares">Palmarés</a></li>
     <li><a href="#television">Televisión</a></li>
-    <li><a href="#repertorio">Repertorio</a></li>
+    <li><a href="#galeria">Galería</a></li>
     <li><a href="#compromiso">Compromiso</a></li>
+    <li><a href="#repertorio">Repertorio</a></li>
     <li><a href="#contacto">Contacto</a></li>
   </ul>
   <div class="nav-social">
@@ -720,18 +757,27 @@
     <h2 class="section-title">Galería de fotos</h2>
   </div>
 
-  <div class="gallery-grid">
-    <div class="gallery-card">
-      <img src="img/galeria_2.jpg" alt="Gala Benéfica · Piano y Voz" loading="lazy">
-      <div class="gallery-caption">Gala Benéfica · Piano y Voz</div>
+  <div class="foto-mosaic">
+    <div class="foto-mosaic-item">
+      <img src="img/foto1.jpeg" alt="Actuación en La Voz Kids" loading="lazy">
     </div>
-    <div class="gallery-card">
-      <img src="img/galeria_3.jpg" alt="Conservatorio Profesional" loading="lazy">
-      <div class="gallery-caption">Conservatorio Profesional</div>
+    <div class="foto-mosaic-item">
+      <img src="img/foto2.jpeg" alt="Evento con piano de cola" loading="lazy">
     </div>
-    <div class="gallery-card">
-      <img src="img/galeria_4.png" alt="Equipo Antonio Orozco" loading="lazy">
-      <div class="gallery-caption">Equipo Antonio Orozco</div>
+    <div class="foto-mosaic-item">
+      <img src="img/foto3.jpeg" alt="Concierto al aire libre" loading="lazy">
+    </div>
+    <div class="foto-mosaic-item">
+      <img src="img/foto4.jpeg" alt="Actuación piano de cola interior" loading="lazy">
+    </div>
+    <div class="foto-mosaic-item">
+      <img src="img/foto5.jpeg" alt="Concierto piano y voz" loading="lazy">
+    </div>
+    <div class="foto-mosaic-item">
+      <img src="img/foto6.jpg" alt="La Voz Kids gran escenario" loading="lazy">
+    </div>
+    <div class="foto-mosaic-item">
+      <img src="img/foto7.png" alt="Con Antonio Orozco en La Voz Kids" loading="lazy">
     </div>
   </div>
 </section>
@@ -744,25 +790,60 @@
   </div>
   <div class="press-grid">
     <div class="press-card">
-      <div class="press-source">Diario Ideal · Mayo 2026</div>
-      <h4>Antonio Orozco se rinde a un joven granadino en La Voz Kids</h4>
-      <a href="https://www.ideal.es/granada/antonio-orozco-rinde-joven-granadino-voz-kids-20260525113642-nt.html" target="_blank">
-        Leer artículo <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
-      </a>
+      <img src="https://img.youtube.com/vi/Dfen9qQJIVw/hqdefault.jpg" alt="Diario Ideal" class="press-card-img" loading="lazy">
+      <div class="press-card-body">
+        <div class="press-source">Diario Ideal · Mayo 2026</div>
+        <h4>Antonio Orozco se rinde a un joven granadino en La Voz Kids</h4>
+        <a href="https://www.ideal.es/granada/antonio-orozco-rinde-joven-granadino-voz-kids-20260525113642-nt.html" target="_blank">
+          Leer artículo <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+        </a>
+      </div>
     </div>
     <div class="press-card">
-      <div class="press-source">Granada Hoy · 2026</div>
-      <h4>Joven granadino conquista a Antonio Orozco en La Voz Kids</h4>
-      <a href="https://www.granadahoy.com/ocio/joven-granadino-conquista-antonio-orozco_0_2006878716.html" target="_blank">
-        Leer artículo <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
-      </a>
+      <img src="https://img.youtube.com/vi/voAeiySbIPc/hqdefault.jpg" alt="Granada Hoy" class="press-card-img" loading="lazy">
+      <div class="press-card-body">
+        <div class="press-source">Granada Hoy · 2026</div>
+        <h4>Joven granadino conquista a Antonio Orozco en La Voz Kids</h4>
+        <a href="https://www.granadahoy.com/ocio/joven-granadino-conquista-antonio-orozco_0_2006878716.html" target="_blank">
+          Leer artículo <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+        </a>
+      </div>
     </div>
     <div class="press-card">
-      <div class="press-source">Diario Ideal · Mayo 2026</div>
-      <h4>La UCI del Hospital Clínico encuentra su Voz</h4>
-      <a href="https://www.ideal.es/granada/uci-encuentra-voz-20260530181819-nt.html" target="_blank">
-        Leer artículo <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
-      </a>
+      <img src="img/foto1.jpeg" alt="Diario Ideal UCI" class="press-card-img" loading="lazy">
+      <div class="press-card-body">
+        <div class="press-source">Diario Ideal · Mayo 2026</div>
+        <h4>La UCI del Hospital Clínico encuentra su Voz</h4>
+        <a href="https://www.ideal.es/granada/uci-encuentra-voz-20260530181819-nt.html" target="_blank">
+          Leer artículo <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── COMPROMISO ── -->
+<section id="compromiso">
+  <div class="section-label">Valores del artista</div>
+  <h2 class="section-title">Compromiso <em>solidario</em></h2>
+  <p class="commit-intro">Joven, cercano y comprometido. Darío presta su voz y su piano a causas benéficas e instituciones, llevando la música allí donde más reconforta.</p>
+  <div class="commit-grid">
+    <div class="commit-card">
+      <h4>Por la sonrisa de Elenita</h4>
+      <p>Gala de moda solidaria del Ayuntamiento de Granada en el Gran Hotel Luna, y Festival de la Canción del Colegio Maristas Granada.</p>
+    </div>
+    <div class="commit-card">
+      <h4>Cris contra el Cáncer</h4>
+      <p>Lunch solidario «Pamelas y Sombreros» en la Huerta del Sello, en favor de la investigación contra el cáncer.</p>
+    </div>
+    <div class="commit-card">
+      <h4>Asociación Sinfonendo</h4>
+      <p>Actuaciones en el Hospital Clínico San Cecilio y el Hospital Materno Infantil, a través de la asociación del Conservatorio Profesional Ángel Barrios.</p>
+    </div>
+    <div class="commit-card">
+      <h4>Cáncer Infantil y Juvenil</h4>
+      <p>Concierto solidario en el Auditorio Caja Rural en favor de AUPA y «Relevos x la Vida».</p>
     </div>
   </div>
 </section>
@@ -821,31 +902,6 @@
           <li>• Colaboración con centros educativos</li>
         </ul>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── COMPROMISO ── -->
-<section id="compromiso">
-  <div class="section-label">Valores del artista</div>
-  <h2 class="section-title">Compromiso <em>solidario</em></h2>
-  <p class="commit-intro">Joven, cercano y comprometido. Darío presta su voz y su piano a causas benéficas e instituciones, llevando la música allí donde más reconforta.</p>
-  <div class="commit-grid">
-    <div class="commit-card">
-      <h4>Por la sonrisa de Elenita</h4>
-      <p>Gala de moda solidaria del Ayuntamiento de Granada en el Gran Hotel Luna, y Festival de la Canción del Colegio Maristas Granada.</p>
-    </div>
-    <div class="commit-card">
-      <h4>Cris contra el Cáncer</h4>
-      <p>Lunch solidario «Pamelas y Sombreros» en la Huerta del Sello, en favor de la investigación contra el cáncer.</p>
-    </div>
-    <div class="commit-card">
-      <h4>Asociación Sinfonendo</h4>
-      <p>Actuaciones en el Hospital Clínico San Cecilio y el Hospital Materno Infantil, a través de la asociación del Conservatorio Profesional Ángel Barrios.</p>
-    </div>
-    <div class="commit-card">
-      <h4>Cáncer Infantil y Juvenil</h4>
-      <p>Concierto solidario en el Auditorio Caja Rural en favor de AUPA y «Relevos x la Vida».</p>
     </div>
   </div>
 </section>
