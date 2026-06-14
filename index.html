@@ -262,28 +262,33 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 2px;
   }
-  /* Mosaic photo gallery — images shown complete, no cropping */
+  /* Mosaic photo gallery — uniform grid */
   .foto-mosaic {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
+    gap: 6px;
   }
   .foto-mosaic-item {
     background: var(--surface);
     overflow: hidden;
     border-radius: 2px;
+    aspect-ratio: 4/3;
     transition: transform .3s ease, box-shadow .3s ease;
   }
   .foto-mosaic-item:hover {
-    transform: translateY(-4px);
+    transform: translateY(-3px);
     box-shadow: 0 12px 40px rgba(0,0,0,.5);
   }
   .foto-mosaic-item img {
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
-    object-fit: contain;
-    transition: opacity .3s;
+    object-fit: cover;
+    object-position: center top;
+    transition: transform .4s ease;
+  }
+  .foto-mosaic-item:hover img {
+    transform: scale(1.04);
   }
   .videoclips-grid {
     grid-template-columns: repeat(2, 1fr);
