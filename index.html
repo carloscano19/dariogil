@@ -267,9 +267,6 @@
     max-width: 960px;
     margin: 0 auto;
   }
-  .photos-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
   .gallery-card {
     position: relative; overflow: hidden; aspect-ratio: 16/10; 
     background: var(--surface); cursor: pointer;
@@ -405,7 +402,7 @@
     section { padding: 80px 24px; }
     .hero { padding: 0 24px 80px; }
     .about-grid, .tv-grid, .rep-grid { grid-template-columns: 1fr; }
-    .gallery-grid, .videoclips-grid, .photos-grid { grid-template-columns: 1fr 1fr; }
+    .gallery-grid, .videoclips-grid { grid-template-columns: 1fr 1fr; }
     .tv-sub-grid { grid-template-columns: 1fr; }
     .press-grid { grid-template-columns: 1fr; }
     .form-row { grid-template-columns: 1fr; }
@@ -723,11 +720,7 @@
     <h2 class="section-title">Galería de fotos</h2>
   </div>
 
-  <div class="gallery-grid photos-grid">
-    <div class="gallery-card">
-      <img src="img/galeria_1.jpg" alt="La Voz Kids 2026 · Actuación" loading="lazy">
-      <div class="gallery-caption">La Voz Kids 2026 · Actuación</div>
-    </div>
+  <div class="gallery-grid">
     <div class="gallery-card">
       <img src="img/galeria_2.jpg" alt="Gala Benéfica · Piano y Voz" loading="lazy">
       <div class="gallery-caption">Gala Benéfica · Piano y Voz</div>
