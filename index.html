@@ -525,34 +525,6 @@
 </head>
 <body>
 
-  <!-- ── PASSWORD OVERLAY ── -->
-  <div id="password-overlay" style="position:fixed;top:0;left:0;width:100vw;height:100vh;background:var(--bg);z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;">
-    <h2 style="margin-bottom:20px;font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gold)">Acceso Restringido</h2>
-    <p style="margin-bottom:20px;color:var(--silver);text-align:center">Introduce la contraseña para ver la web de Darío Gil.</p>
-    <div style="display:flex;gap:10px;">
-      <input type="password" id="pass-input" placeholder="Contraseña" style="padding:12px 20px;background:var(--surface);border:1px solid var(--border);color:var(--white);border-radius:4px;outline:none;font-family:inherit">
-      <button onclick="checkPassword()" style="padding:12px 24px;background:var(--gold);color:var(--bg);border:none;border-radius:4px;font-weight:600;cursor:pointer">Entrar</button>
-    </div>
-    <p id="pass-error" style="color:#ff4444;margin-top:15px;display:none;font-size:0.9rem">Contraseña incorrecta</p>
-  </div>
-  <script>
-    function checkPassword() {
-      const input = document.getElementById('pass-input').value;
-      if (input === 'Dario2026') {
-        document.getElementById('password-overlay').style.display = 'none';
-        document.body.style.overflow = 'auto';
-      } else {
-        document.getElementById('pass-error').style.display = 'block';
-      }
-    }
-    document.body.style.overflow = 'hidden'; // Block scroll while overlay is active
-    // Permite dar "Enter" en el input
-    document.getElementById('pass-input').addEventListener('keypress', function (e) {
-      if (e.key === 'Enter') checkPassword();
-    });
-  </script>
-
-
 <!-- ── NAV ── -->
 <nav>
   <a href="#" class="nav-logo">Darío <span>Gil</span></a>
