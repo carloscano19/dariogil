@@ -20,7 +20,7 @@
     --muted:     #5A5B63;
   }
 
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; overflow-x: hidden; }
 
   body {
     background: var(--bg);
@@ -451,8 +451,11 @@
     .awards-grid { grid-template-columns: 1fr 1fr; }
     .award-card.feature { grid-column: span 2; }
     .award-card { min-height: 0; }
-    footer { flex-direction: column; gap: 20px; text-align: center; }
+    footer { flex-direction: column; gap: 20px; text-align: center; padding: 40px 24px; }
     #prensa { padding: 80px 24px; }
+    .about-photo-wrap::before, .about-photo-wrap::after { display: none; }
+    .about-stats { flex-wrap: wrap; gap: 24px; }
+    .hero-scroll { display: none; }
   }
 
   /* ── YouTube Cards ─────────────────────────────────── */
@@ -597,7 +600,7 @@
         </div>
         <div class="stat">
           <div class="stat-num">4.º</div>
-          <div class="stat-label">Grado Profesional</div>
+          <div class="stat-label">Grado Profesional de Piano</div>
         </div>
         <div class="stat">
           <div class="stat-num" style="font-size:1.6rem; line-height:1.15">La Voz<br>Kids</div>
