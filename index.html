@@ -448,9 +448,11 @@
     .press-grid { grid-template-columns: 1fr; }
     .form-row { grid-template-columns: 1fr; }
     .contact-info { grid-template-columns: 1fr 1fr; gap: 28px 24px; }
-    .awards-grid { grid-template-columns: 1fr; }
-    .award-card.feature { grid-column: span 1; }
+    .awards-grid { grid-template-columns: 1fr !important; max-width: 100%; overflow: hidden; }
+    .award-card.feature { grid-column: span 1 !important; }
     .award-card { min-height: 0; }
+    #palmares { overflow-x: hidden; }
+    .commit-grid { grid-template-columns: 1fr; }
     footer { flex-direction: column; gap: 20px; text-align: center; padding: 40px 24px; }
     #prensa { padding: 80px 24px; }
     .about-photo-wrap::before, .about-photo-wrap::after { display: none; }
@@ -482,11 +484,11 @@
   .yt-card:hover .yt-play-btn { transform: translate(-50%, -50%) scale(1.12); opacity: 1; }
 
   /* ── Palmarés ──────────────────────────────────────── */
-  #palmares { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  #palmares { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); overflow-x: hidden; }
   .awards-grid {
     display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
     margin-top: 48px; background: var(--border);
-    border: 1px solid var(--border);
+    border: 1px solid var(--border); max-width: 100%; box-sizing: border-box;
   }
   .award-card {
     background: var(--bg); padding: 34px 32px;
