@@ -266,7 +266,7 @@
   /* Mosaic photo gallery — uniform grid */
   .foto-mosaic {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 6px;
   }
   .foto-mosaic-item {
@@ -443,7 +443,7 @@
   /* ── PRESS ───────────────────────────────────────────── */
   #prensa { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 80px 64px; }
   .press-header { margin-bottom: 48px; }
-  .press-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+  .press-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2px; }
   .press-card {
     background: var(--bg); padding: 0;
     border: 1px solid var(--border);
@@ -636,17 +636,17 @@
         <cite>— Antonio Orozco, La Voz Kids 2026</cite>
       </div>
 
-      <p>Darío Gil nació en Elche (Alicante) con la música ya en las manos. A los 15 años compagina 4º de ESO con 4° de Profesional en el Conservatorio Ángel Barrios de Granada, por la especialidad de piano, un itinerario que exige tanto disciplina técnica como una sensibilidad artística poco común en alguien de su edad.</p>
+      <p>Darío Gil nació en Elche (Alicante) con la música ya en las manos. A los 16 años compagina 4º de ESO con 4° de Profesional en el Conservatorio Ángel Barrios de Granada, por la especialidad de piano, un itinerario que exige tanto disciplina técnica como una sensibilidad artística poco común en alguien de su edad.</p>
       <p>Su propuesta va más allá del virtuosismo clásico: Darío construye actuaciones donde la voz y el piano dialogan en un solo relato emocional. Desde baladas en español hasta pop en inglés, pasando por piezas instrumentales cinematográficas, su repertorio se adapta con naturalidad a galas benéficas, bodas, actos institucionales y conciertos íntimos.</p>
       <p>La suma de reconocimientos obtenidos, desde concursos en la provincia de Granada y Alicante, hasta la Televisión Pública Valenciana y la pantalla de Antena 3 a través de La Voz Kids 2026, describe a un artista que no ha parado de crecer y que ya tiene el futuro firmado con notas reales.</p>
 
       <div class="about-stats">
         <div class="stat">
-          <div class="stat-num">15</div>
+          <div class="stat-num">16</div>
           <div class="stat-label">Años</div>
         </div>
         <div class="stat">
-          <div class="stat-num">5+</div>
+          <div class="stat-num">6+</div>
           <div class="stat-label">Premios</div>
         </div>
         <div class="stat">
@@ -672,6 +672,11 @@
       <div class="yr">2026</div>
       <h4>La Voz Kids — Equipo Antonio Orozco</h4>
       <div class="org">Antena 3</div>
+    </div>
+    <div class="award-card">
+      <div class="yr">2026</div>
+      <h4>1.er Premio — VI Festival de la Canción de Elche</h4>
+      <div class="org">Ayuntamiento de Elche</div>
     </div>
     <div class="award-card">
       <div class="yr">2025</div>
@@ -807,6 +812,12 @@
     <div class="foto-mosaic-item">
       <img src="img/foto8.jpg" alt="Darío en la Feria de Vegas del Genil" loading="lazy">
     </div>
+    <div class="foto-mosaic-item">
+      <img src="img/foto9.jpg" alt="Darío Gil al piano y voz en directo" loading="lazy">
+    </div>
+    <div class="foto-mosaic-item">
+      <img src="img/foto10.jpg" alt="Concierto de Darío Gil ante el público" loading="lazy">
+    </div>
   </div>
 </section>
 
@@ -843,6 +854,16 @@
         <div class="press-source">Diario Ideal · Mayo 2026</div>
         <h4>La UCI del Hospital Clínico encuentra su Voz</h4>
         <a href="https://www.ideal.es/granada/uci-encuentra-voz-20260530181819-nt.html" target="_blank">
+          Leer artículo <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="press-card">
+      <img src="img/prensa4.jpg" alt="Diario Información - Ganadores Festival de la Canción de Elche" class="press-card-img" loading="lazy">
+      <div class="press-card-body">
+        <div class="press-source">Diario Información · Agosto 2026</div>
+        <h4>Ganadores del VI Festival de la Canción de las Fiestas de Elche</h4>
+        <a href="https://www.informacion.es/elche/2026/08/07/ganadores-festival-cancion-fiestas-elche-133178450.html" target="_blank">
           Leer artículo <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
         </a>
       </div>
@@ -903,6 +924,7 @@
         <li>A puro dolor <span>Son by Four</span></li>
         <li>Hoy tengo ganas de ti <span>Miguel Gallardo</span></li>
         <li>Todo esto es la música <span>Serafín Zubiri</span></li>
+        <li>Garganta con arena <span>Cacho Castaña</span></li>
         <li>Envidia <span>Nathy Peluso</span></li>
       </ul>
     </div>
