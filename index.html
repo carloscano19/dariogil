@@ -64,7 +64,12 @@
     --muted:     #5A5B63;
   }
 
-  html { scroll-behavior: smooth; overflow-x: hidden; }
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    max-width: 100%;
+    width: 100%;
+  }
 
   body {
     background: var(--bg);
@@ -73,6 +78,14 @@
     font-size: 16px;
     line-height: 1.6;
     overflow-x: hidden;
+    max-width: 100%;
+    width: 100%;
+    position: relative;
+  }
+
+  section, nav, footer, header {
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   /* ── NAV ─────────────────────────────────────────────── */
@@ -841,6 +854,9 @@
       <img src="img/foto2.jpeg" alt="Evento con piano de cola" loading="lazy">
     </div>
     <div class="foto-mosaic-item">
+      <img src="img/foto11.jpg" alt="Darío Gil en la gala de los Premios FAAV en Granada" loading="lazy">
+    </div>
+    <div class="foto-mosaic-item">
       <img src="img/foto3.jpeg" alt="Concierto al aire libre" loading="lazy">
     </div>
     <div class="foto-mosaic-item">
@@ -907,6 +923,16 @@
         <div class="press-source">Diario Información · Agosto 2026</div>
         <h4>Ganadores del VI Festival de la Canción de las Fiestas de Elche</h4>
         <a href="https://www.informacion.es/elche/2026/08/07/ganadores-festival-cancion-fiestas-elche-133178450.html" target="_blank">
+          Leer artículo <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="press-card">
+      <img src="img/prensa5.jpg" alt="Solo Agentes - V Premios Andaluces de Agencias de Viajes en Granada" class="press-card-img" style="object-position:center 25%" loading="lazy">
+      <div class="press-card-body">
+        <div class="press-source">Solo Agentes · Octubre 2026</div>
+        <h4>Los V Premios Andaluces reivindican en Granada el valor de las agencias de viajes</h4>
+        <a href="https://www.soloagentes.com/los-v-premios-andaluces-reivindican-en-granada-el-valor-de-las-agencias-de-viajes/" target="_blank">
           Leer artículo <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
         </a>
       </div>
